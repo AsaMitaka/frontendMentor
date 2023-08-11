@@ -1,0 +1,207 @@
+//primary-color
+$lightred: hsl(0, 100%, 67%);
+$orangeyellow: hsl(39, 100%, 56%);
+$greenteal: hsl(166, 100%, 37%);
+$cobaltblue: hsl(234, 85%, 45%);
+//gradients
+$lightslateblueBckg: hsl(252, 100%, 67%);
+$lightroyalblueBckg: hsl(241, 81%, 54%);
+$violetblueCircle: hsla(256, 72%, 46%, 1);
+$persianblueCircle: hsla(241, 72%, 46%, 0);
+//neutral
+$white: hsl(0, 0%, 100%);
+$paleblue: hsl(221, 100%, 96%);
+$lightlavender: hsl(241, 100%, 89%);
+$darkgrayblue: hsl(224, 30%, 27%);
+
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-weight: 500, 700, 800;
+  src: url('./assets/fonts/HankenGrotesk-VariableFont_wght.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Hanken Grotesk';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $white;
+}
+
+.block {
+  max-width: 650px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 25px;
+  box-shadow: 5px 15px 20px -10px $cobaltblue;
+
+  &__left {
+    width: 50%;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(180deg, $lightslateblueBckg 0%, $lightroyalblueBckg 100%);
+    border-radius: 25px;
+
+    &-title {
+      margin-top: 20px;
+      font-size: 24px;
+      color: $lightlavender;
+    }
+
+    &-info {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      padding: 30px 50px;
+      color: $lightlavender;
+      font-size: 16px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, $violetblueCircle 0%, $persianblueCircle 100%);
+
+      .info__main {
+        font-size: 50px;
+        font-weight: bold;
+        color: $white;
+      }
+    }
+
+    &-subinfo {
+      margin-top: 20px;
+      color: $white;
+      font-size: 28px;
+    }
+
+    &-subtext {
+      margin-bottom: 20px;
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: center;
+      color: $lightlavender;
+    }
+  }
+
+  &__right {
+    width: 50%;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-header {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: 700;
+      color: $darkgrayblue;
+    }
+
+    &-list {
+      .list__item {
+        margin: 10px 0;
+        padding: 15px 10px;
+        list-style-type: none;
+        font-size: 20px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+
+        &-icon {
+          width: 20px;
+          height: 20px;
+          margin-right: 10px;
+        }
+
+        &-text {
+          display: flex;
+          align-items: center;
+        }
+
+        &-subtext {
+          color: $darkgrayblue;
+          font-weight: 700;
+        }
+
+        &-span {
+          color: $paleblue;
+        }
+      }
+    }
+
+    &-btn {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      padding: 10px 20px;
+      font-size: 20px;
+      color: $white;
+      border: 1px transparent;
+      background-color: $darkgrayblue;
+      border-radius: 20px;
+      cursor: pointer;
+
+      &:hover {
+        background: linear-gradient(180deg, $lightslateblueBckg 0%, $lightroyalblueBckg 25%);
+      }
+    }
+  }
+}
+
+.red {
+  color: $lightred;
+  background-color: hsla(0, 100%, 67%, 0.2);
+}
+
+.yellow {
+  color: $orangeyellow;
+  background-color: hsla(39, 100%, 56%, 0.2);
+}
+
+.green {
+  color: $greenteal;
+  background-color: hsla(166, 100%, 37%, 0.2);
+}
+
+.blue {
+  color: $cobaltblue;
+  background-color: hsla(234, 85%, 45%, 0.2);
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+}
+
+@media screen and (min-width: 376px) and (max-width: 767px) {
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
+  .block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: none;
+    box-shadow: none;
+
+    &__left {
+      width: 100%;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    &__right {
+      width: 100%;
+    }
+  }
+}

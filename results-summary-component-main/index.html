@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Results summary component</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="block">
+      <div class="block__left">
+        <h1 class="block__left-title">Your Result</h1>
+        <div class="block__left-info"><span class="info__main">76</span>of 100</div>
+        <div class="block__left-subinfo">Great</div>
+        <div class="block__left-subtext">
+          You scored higher than 65% of the people who have taken these tests.
+        </div>
+      </div>
+      <div class="block__right">
+        <div class="block__right-header">Summary</div>
+        <ul class="block__right-list">
+          <li class="list__item red">
+            <div class="list__item-text">
+              <img src="./assets/images/icon-reaction.svg" alt="icon" class="list__item-icon" />
+              Reaction
+            </div>
+            <div class="list__item-subtext">80 <span class="list__item-span">/ 100</span></div>
+          </li>
+          <li class="list__item yellow">
+            <div class="list__item-text">
+              <img src="./assets/images/icon-memory.svg" alt="icon" class="list__item-icon" />
+              Memory
+            </div>
+            <div class="list__item-subtext">92 <span class="list__item-span">/ 100</span></div>
+          </li>
+          <li class="list__item green">
+            <div class="list__item-text">
+              <img src="./assets/images/icon-verbal.svg" alt="icon" class="list__item-icon" />
+              Verbal
+            </div>
+            <div class="list__item-subtext">61 <span class="list__item-span">/ 100</span></div>
+          </li>
+          <li class="list__item blue">
+            <div class="list__item-text">
+              <img src="./assets/images/icon-visual.svg" alt="icon" class="list__item-icon" />
+              Visual
+            </div>
+            <div class="list__item-subtext">72 <span class="list__item-span">/ 100</span></div>
+          </li>
+        </ul>
+        <button class="block__right-btn">Continue</button>
+      </div>
+    </div>
+  </body>
+</html>
