@@ -1,0 +1,120 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Outfit", sans-serif;
+  background-color: hsl(217, 54%, 11%);
+}
+
+.block {
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px;
+  color: hsl(215, 51%, 70%);
+  font-weight: 300;
+  background-color: hsl(216, 50%, 16%);
+  border-radius: 15px;
+  box-shadow: 0px 20px 20px 2px rgba(0, 0, 0, 0.7);
+}
+.block__wrapper {
+  margin-bottom: 20px;
+  position: relative;
+}
+.block__wrapper-spoiler {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(178, 100%, 50%);
+  opacity: 0.75;
+  border-radius: 10px;
+}
+.block__wrapper-spoiler-img {
+  width: 50px;
+  height: 50px;
+  color: hsl(0, 0%, 100%);
+}
+.block__wrapper:hover .block__wrapper-spoiler {
+  /* Применяем :hover к родителю, чтобы показать спойлер */
+  display: flex;
+}
+.block__wrapper--img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.block__wrapper--img:hover {
+  opacity: 0.3;
+}
+.block__container--title {
+  font-size: 24px;
+  font-weight: 600;
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+  cursor: pointer;
+}
+.block__container--title:hover {
+  color: hsl(178, 100%, 50%);
+}
+.block__container--text {
+  margin-top: 20px;
+  font-size: 18px;
+}
+.block__container--priceblock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 15px;
+  border-bottom: 1px solid hsl(215, 32%, 27%);
+}
+.block__container--priceblock-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+.block__container--priceblock-price {
+  color: hsl(178, 100%, 50%);
+  font-weight: 400;
+}
+.block__container--user {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+.block__container--user-img {
+  width: 25px;
+  height: 25px;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.block__container--user-link {
+  margin-left: 5px;
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+  cursor: pointer;
+}
+.block__container--user-link:hover {
+  color: hsl(178, 100%, 50%);
+}
+
+@media screen and (min-width: 376px) and (max-width: 767px) {
+  .block {
+    margin: 0 10px;
+    width: 90%;
+  }
+}/*# sourceMappingURL=style.css.map */
