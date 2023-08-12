@@ -1,0 +1,129 @@
+//Primary
+$veryDarkBlue: hsl(233, 47%, 7%);
+$darkDesaturatedBlue: hsl(244, 38%, 16%);
+$softViolet: hsl(277, 64%, 61%);
+//Neutral
+$white: hsl(0, 0%, 100%);
+$slightlyTransparentWhite: hsla(0, 0%, 100%, 0.75);
+$slightlyTransparentWhite: hsla(0, 0%, 100%, 0.6);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $veryDarkBlue;
+}
+
+.block {
+  display: flex;
+  flex-direction: row;
+  width: 925px;
+  background-color: $darkDesaturatedBlue;
+  font-family: 'Inter', sans-serif, 'Lexend Deca', sans-serif;
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px 80px;
+    width: 50%;
+
+    &--header {
+      color: $white;
+      font-size: 32px;
+      font-weight: 700;
+
+      &-span {
+        color: $softViolet;
+      }
+    }
+
+    &--text {
+      margin-top: 30px;
+      color: $slightlyTransparentWhite;
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    &--data {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .data__info {
+        &--title {
+          color: $white;
+          font-size: 28px;
+        }
+
+        &--subtitle {
+          color: $slightlyTransparentWhite;
+          font-size: 15px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  &__right {
+    width: 50%;
+    background-color: $softViolet;
+
+    &--img {
+      margin-bottom: -5px;
+      width: 100%;
+      opacity: 0.6;
+    }
+  }
+}
+
+@media screen and (min-width: 350px) and (max-width: 500px) {
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
+  .block {
+    margin: 10px 0;
+    width: 90%;
+    display: flex;
+    flex-direction: column-reverse;
+    border-radius: 15px;
+
+    &__left {
+      width: 100%;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      padding: 25px 30px;
+
+      &--data {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .data__info {
+          margin-top: 20px;
+        }
+      }
+    }
+
+    &__right {
+      width: 100%;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+
+      &--img {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+      }
+    }
+  }
+}

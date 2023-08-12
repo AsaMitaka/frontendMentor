@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(233, 47%, 7%);
+}
+
+.block {
+  display: flex;
+  flex-direction: row;
+  width: 925px;
+  background-color: hsl(244, 38%, 16%);
+  font-family: "Inter", sans-serif, "Lexend Deca", sans-serif;
+}
+.block__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 80px;
+  width: 50%;
+}
+.block__left--header {
+  color: hsl(0, 0%, 100%);
+  font-size: 32px;
+  font-weight: 700;
+}
+.block__left--header-span {
+  color: hsl(277, 64%, 61%);
+}
+.block__left--text {
+  margin-top: 30px;
+  color: hsla(0, 0%, 100%, 0.6);
+  font-size: 15px;
+  font-weight: 400;
+}
+.block__left--data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.block__left--data .data__info--title {
+  color: hsl(0, 0%, 100%);
+  font-size: 28px;
+}
+.block__left--data .data__info--subtitle {
+  color: hsla(0, 0%, 100%, 0.6);
+  font-size: 15px;
+  font-weight: 400;
+}
+.block__right {
+  width: 50%;
+  background-color: hsl(277, 64%, 61%);
+}
+.block__right--img {
+  margin-bottom: -5px;
+  width: 100%;
+  opacity: 0.6;
+}
+
+@media screen and (min-width: 350px) and (max-width: 500px) {
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  .block {
+    margin: 10px 0;
+    width: 90%;
+    display: flex;
+    flex-direction: column-reverse;
+    border-radius: 15px;
+  }
+  .block__left {
+    width: 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 25px 30px;
+  }
+  .block__left--data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .block__left--data .data__info {
+    margin-top: 20px;
+  }
+  .block__right {
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  .block__right--img {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+}/*# sourceMappingURL=style.css.map */
