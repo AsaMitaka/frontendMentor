@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: url("./images/pattern-background-desktop.svg") center center no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.block {
+  max-width: 400px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 1px 10px 20px 10px hsl(225, 100%, 94%);
+}
+.block .wrapper--img {
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.block .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 30px 40px;
+}
+.block .container__title {
+  font-size: 32px;
+  font-weight: 900;
+}
+.block .container__text {
+  font-size: 16px;
+  text-align: center;
+  color: hsl(224, 23%, 55%);
+}
+.block .container__plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  width: 100%;
+  background-color: hsl(225, 100%, 94%);
+  border-radius: 10px;
+}
+.block .container__plan--left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.block .container__plan--icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+.block .container__plan--info-title {
+  font-weight: bold;
+}
+.block .container__plan--change {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.block .container__btn {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 16px;
+  color: hsl(225, 100%, 94%);
+  border: 1px transparent;
+  border-radius: 10px;
+  background-color: hsl(245, 75%, 52%);
+  box-shadow: -1px 3px 13px 0px hsl(224, 23%, 55%);
+  cursor: pointer;
+}
+.block .container__btn:hover {
+  background-color: hsl(224, 23%, 55%);
+}
+.block .container__cancel {
+  cursor: pointer;
+}
+.block .container__cancel:hover {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 300px) and (max-width: 767px) {
+  body {
+    background: url("./images/pattern-background-mobile.svg") center center no-repeat;
+  }
+  .block {
+    margin: 0 auto;
+    width: 90%;
+  }
+  .block .container__plan--icon {
+    margin-right: 2px;
+  }
+}/*# sourceMappingURL=style.css.map */
