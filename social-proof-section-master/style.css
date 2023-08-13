@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "League Spartan", sans-serif;
+}
+
+.block {
+  max-width: 1000px;
+  padding: 10px 20px;
+}
+.block__header {
+  display: flex;
+  flex-direction: row;
+}
+.block__header--left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.block__header--left-title {
+  font-size: 40px;
+  color: hsl(300, 43%, 22%);
+}
+.block__header--left-subtitle {
+  margin-top: 40px;
+  font-size: 18px;
+  font-weight: 400;
+}
+.block__header--right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 15px;
+}
+.block__header--right-rated {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: hsl(300, 24%, 96%);
+  border-radius: 10px;
+}
+.block__header--right-rated .rated__icons {
+  margin-right: 10px;
+}
+.block__header--right-rated .rated__text {
+  color: hsl(300, 43%, 22%);
+  font-weight: 700;
+}
+.block__main {
+  height: 250px;
+  margin-top: 30px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.block__main--review {
+  padding: 20px 25px;
+  border-radius: 20px;
+  background-color: hsl(300, 43%, 22%);
+}
+.block__main--review-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.block__main--review-header .header__img {
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.block__main--review-header .header__block--info {
+  color: hsl(0, 0%, 100%);
+}
+.block__main--review-header .header__block--subinfo {
+  color: hsl(333, 80%, 67%);
+}
+.block__main--review-text {
+  margin-top: 20px;
+  color: hsl(0, 0%, 100%);
+}
+
+.left {
+  align-self: flex-start;
+}
+
+.center {
+  align-self: center;
+}
+
+.right {
+  align-self: flex-end;
+}
+
+.up {
+  align-self: flex-start;
+}
+
+.down {
+  align-self: flex-end;
+}
+
+@media screen and (min-width: 300px) and (max-width: 768px) {
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  .block {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .block__header {
+    display: flex;
+    flex-direction: column;
+  }
+  .block__header--left {
+    width: auto;
+  }
+  .block__header--left-title {
+    text-align: center;
+  }
+  .block__header--left-subtitle {
+    text-align: center;
+  }
+  .block__header--right {
+    margin-top: 30px;
+    width: auto;
+  }
+  .block__main {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .right,
+  .left,
+  .center,
+  .up,
+  .down {
+    align-self: normal;
+  }
+}/*# sourceMappingURL=style.css.map */

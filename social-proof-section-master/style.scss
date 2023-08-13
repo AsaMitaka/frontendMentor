@@ -1,0 +1,187 @@
+//Primary
+$veryDarkMagenta: hsl(300, 43%, 22%);
+$softPink: hsl(333, 80%, 67%);
+//Neutral
+$darkGrayishMagenta: hsl(303, 10%, 53%);
+$lightGrayishMagenta: hsl(300, 24%, 96%);
+$white: hsl(0, 0%, 100%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.block {
+  max-width: 1000px;
+  padding: 10px 20px;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+
+    &--left {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &-title {
+        font-size: 40px;
+        color: $veryDarkMagenta;
+      }
+
+      &-subtitle {
+        margin-top: 40px;
+        font-size: 18px;
+        font-weight: 400;
+      }
+    }
+
+    &--right {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 15px;
+
+      &-rated {
+        display: flex;
+        align-items: center;
+
+        padding: 15px 20px;
+        background-color: $lightGrayishMagenta;
+        border-radius: 10px;
+
+        .rated__icons {
+          margin-right: 10px;
+          &-icon {
+          }
+        }
+
+        .rated__text {
+          color: $veryDarkMagenta;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  &__main {
+    height: 250px;
+    margin-top: 30px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    &--review {
+      padding: 20px 25px;
+      border-radius: 20px;
+      background-color: $veryDarkMagenta;
+
+      &-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .header__img {
+          margin-right: 10px;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+
+        .header__block {
+          &--info {
+            color: $white;
+          }
+          &--subinfo {
+            color: $softPink;
+          }
+        }
+      }
+
+      &-text {
+        margin-top: 20px;
+        color: $white;
+      }
+    }
+  }
+}
+
+.left {
+  align-self: flex-start;
+}
+.center {
+  align-self: center;
+}
+.right {
+  align-self: flex-end;
+}
+
+.up {
+  align-self: flex-start;
+}
+.down {
+  align-self: flex-end;
+}
+
+@media screen and (min-width: 300px) and (max-width: 768px) {
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  .block {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+      display: flex;
+      flex-direction: column;
+
+      &--left {
+        width: auto;
+
+        &-title {
+          text-align: center;
+        }
+
+        &-subtitle {
+          text-align: center;
+        }
+      }
+
+      &--right {
+        margin-top: 30px;
+        width: auto;
+      }
+    }
+
+    &__main {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .right,
+  .left,
+  .center,
+  .up,
+  .down {
+    align-self: normal;
+  }
+}
