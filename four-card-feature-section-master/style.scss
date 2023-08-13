@@ -1,0 +1,124 @@
+//Primary
+$red: hsl(0, 78%, 62%);
+$cyan: hsl(180, 62%, 55%);
+$orange: hsl(34, 97%, 64%);
+$blue: hsl(212, 86%, 64%);
+//Neutral
+$veryDarkBlue: hsl(234, 12%, 34%);
+$grayishBlue: hsl(229, 6%, 66%);
+$veryLightGray: hsl(0, 0%, 98%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
+
+  &__header {
+    &--title {
+      font-size: 28px;
+      font-weight: 200;
+    }
+    &--subtitle {
+      font-size: 28px;
+      font-weight: bold;
+    }
+    &--text {
+      font-size: 14px;
+      margin-top: 20px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 40px;
+
+    &--column {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      margin: 10px 20px;
+      padding: 10px 30px;
+      box-shadow: 0px 10px 10px 0px $grayishBlue;
+
+      &-title {
+        align-self: flex-start;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      &-text {
+        margin-top: 15px;
+        font-size: 15px;
+      }
+
+      &-img {
+        align-self: flex-end;
+        margin-top: 30px;
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+}
+
+.cyan {
+  border-top: 3px solid $cyan;
+}
+
+.red {
+  border-top: 3px solid $red;
+  margin-bottom: 20px;
+}
+
+.orange {
+  border-top: 3px solid $orange;
+}
+
+.blue {
+  border-top: 3px solid $blue;
+}
+
+@media screen and (min-width: 300px) and (max-width: 500px) {
+  body {
+    height: 100%;
+  }
+
+  .block {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+      padding: 10px 20px;
+    }
+
+    &__main {
+      display: flex;
+      flex-direction: column;
+
+      &--column {
+        border-radius: 10px;
+        box-shadow: 0px 5px 10px -5px $grayishBlue;
+      }
+    }
+  }
+}
