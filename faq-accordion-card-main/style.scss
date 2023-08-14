@@ -1,0 +1,159 @@
+//PrimaryText
+$veryDarkDesaturatedBlue: hsl(238, 29%, 16%);
+$softRed: hsl(14, 88%, 65%);
+
+//GradientBackground:
+$softViolet: hsl(273, 75%, 66%);
+$softBlue: hsl(240, 73%, 65%);
+
+//NeutralText
+$veryDarkGrayishBlue: hsl(237, 12%, 33%);
+$darkGrayishBlue: hsl(240, 6%, 50%);
+
+//Dividers
+$lightGrayishBlue: hsl(240, 5%, 91%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, $softViolet 0%, $softBlue 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block {
+  width: 1000px;
+  min-height: 500px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+
+  &__left {
+    width: 50%;
+    position: relative;
+
+    &--boxDesctopImg {
+      width: 200px;
+      position: absolute;
+      z-index: 2;
+      left: -21%;
+      bottom: 35%;
+    }
+
+    &--desctopImg {
+      width: 100%;
+      position: absolute;
+      z-index: 1;
+      top: 20px;
+      left: -10%;
+    }
+
+    &--bottomDesctopImg {
+      position: absolute;
+      z-index: 0;
+      width: 100%;
+    }
+
+    &--mobileImg {
+      display: none;
+    }
+
+    &--mobileDescImg {
+      display: none;
+    }
+  }
+
+  &__right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 40px 25px;
+
+    &--title {
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    details > summary {
+      list-style-image: url('./images/icon-arrow-down.svg');
+    }
+
+    details[open] > summary {
+      list-style-image: url('./images/icon-arrow-down.svg');
+      font-weight: 900;
+    }
+
+    &--details {
+      padding: 30px 10px;
+      border-bottom: 1px solid $lightGrayishBlue;
+      &-title {
+        font-size: 16px;
+        font-weight: 400;
+        cursor: pointer;
+      }
+
+      &-text {
+        margin-top: 10px;
+        font-size: 16px;
+        color: $darkGrayishBlue;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 700px) {
+  body {
+    width: 100%;
+  }
+  .block {
+    margin-top: 100px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+
+    &__left {
+      width: 100%;
+      height: 10px;
+
+      &--boxDesctopImg {
+        display: none;
+      }
+
+      &--desctopImg {
+        display: none;
+      }
+
+      &--bottomDesctopImg {
+        display: none;
+      }
+
+      &--mobileImg {
+        display: block;
+        position: absolute;
+        left: 20%;
+      }
+
+      &--mobileDescImg {
+        display: block;
+        position: absolute;
+        width: 60%;
+        bottom: -70px;
+        left: 20%;
+      }
+    }
+
+    &__right {
+      width: 100%;
+      margin-top: 30px;
+    }
+  }
+}
