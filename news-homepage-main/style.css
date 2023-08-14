@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+}
+
+.wrapper {
+  margin-top: 30px;
+  max-width: 1200px;
+}
+.wrapper .header--nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrapper .header--nav .list {
+  display: flex;
+  flex-direction: row;
+}
+.wrapper .header--nav .list__burger {
+  display: none;
+}
+.wrapper .header--nav .list .logo {
+  padding: 0;
+}
+.wrapper .header--nav .list__active {
+  display: flex;
+  flex-direction: row;
+}
+.wrapper .header--nav .list__item {
+  list-style-type: none;
+  padding: 10px 20px;
+}
+.wrapper .header--nav .list__item--a {
+  color: hsl(233, 8%, 79%);
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+}
+.wrapper .header--nav .list__item--logo {
+  height: 35px;
+}
+.wrapper .main__row {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+.wrapper .main__row .row__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.wrapper .main__row .row__item--img {
+  width: 100px;
+  margin-right: 20px;
+}
+.wrapper .main__row .row__item .row__column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.wrapper .main__row .row__item .row__column--num {
+  font-size: 32px;
+  font-weight: 900;
+  color: hsl(233, 8%, 79%);
+}
+.wrapper .main__row .row__item .row__column--title {
+  font-size: 26px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+.wrapper .main__row .row__item .row__column--text {
+  margin-top: 10px;
+}
+.wrapper .main__left {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper .main__left--block .image {
+  width: 100%;
+}
+.wrapper .main__left--container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+}
+.wrapper .main__left--container-title {
+  margin-right: 30px;
+  font-size: 36px;
+  font-weight: 800;
+}
+.wrapper .main__left--container-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.wrapper .main__left--container-block .block__text {
+  color: hsl(236, 13%, 42%);
+}
+.wrapper .main__left--container-block .block__btn {
+  align-self: flex-start;
+  margin-top: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: hsl(36, 100%, 99%);
+  background-color: hsl(5, 85%, 63%);
+  border: 1px transparent;
+  cursor: pointer;
+}
+.wrapper .main__right {
+  width: 40%;
+  padding: 20px 30px;
+  background-color: black;
+}
+.wrapper .main__right--title {
+  font-size: 32px;
+  font-weight: 900;
+  color: hsl(35, 77%, 62%);
+}
+.wrapper .main__right--list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.wrapper .main__right--list .list__item {
+  border-bottom: 1px solid grey;
+  padding: 30px 0;
+}
+.wrapper .main__right--list .list__item:last-child {
+  border-bottom: none;
+}
+.wrapper .main__right--list .list__item--title {
+  font-size: 24px;
+  color: hsl(36, 100%, 99%);
+  text-decoration: none;
+}
+.wrapper .main__right--list .list__item--text {
+  margin-top: 5px;
+  font-size: 16px;
+  color: hsl(233, 8%, 79%);
+}
+
+@media screen and (min-width: 300px) and (max-width: 700px) {
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  .wrapper {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+  .wrapper .header .list__active {
+    display: none;
+  }
+  .wrapper .header .list__burger {
+    display: flex;
+    cursor: pointer;
+  }
+  .wrapper .main {
+    display: flex;
+    flex-direction: column;
+  }
+  .wrapper .main .main__row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  .wrapper .main__left {
+    width: 100%;
+  }
+  .wrapper .main__left--container {
+    display: flex;
+    flex-direction: column;
+  }
+  .wrapper .main__left--container-title {
+    margin-top: 10px;
+  }
+  .wrapper .main__left--container-block .block__btn {
+    margin-top: 20px;
+  }
+  .wrapper .main__right {
+    margin-top: 20px;
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */
