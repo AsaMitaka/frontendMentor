@@ -1,0 +1,146 @@
+//Primary
+$cyan: hsl(179, 62%, 43%);
+$brighYellow: hsl(71, 73%, 54%);
+//Neutral
+$lightGray: hsl(204, 43%, 93%);
+$grayishBlue: hsl(218, 22%, 67%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Karla', sans-serif;
+  background-color: $lightGray;
+}
+
+.block {
+  max-width: 800px;
+  border-radius: 20px;
+  background-color: white;
+
+  &__header {
+    padding: 40px 30px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+
+    &--title {
+      font-size: 24px;
+      color: $cyan;
+    }
+
+    &--subtitle {
+      margin-top: 10px;
+      font-size: 20px;
+      color: $brighYellow;
+    }
+
+    &--text {
+      margin-top: 10px;
+      font-size: 15px;
+      color: $grayishBlue;
+    }
+  }
+  &__main {
+    display: flex;
+    flex-direction: row;
+
+    &--left {
+      width: 50%;
+      padding: 40px 30px;
+      color: $lightGray;
+      background-color: $cyan;
+      border-bottom-left-radius: 20px;
+
+      &-title {
+        font-size: 24px;
+      }
+
+      &-prices {
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+
+        .prices__info {
+          font-size: 24px;
+          margin-right: 10px;
+        }
+
+        .prices__subinfo {
+          color: $grayishBlue;
+        }
+      }
+
+      &-text {
+        margin-top: 5px;
+      }
+
+      &-btn {
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px 20px;
+        align-self: center;
+        color: $lightGray;
+        border: 1px transparent;
+        background-color: $brighYellow;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    }
+
+    &--right {
+      width: 50%;
+      padding: 40px 30px;
+      background-color: $brighYellow;
+      border-bottom-right-radius: 20px;
+
+      &-title {
+        font-size: 24px;
+        color: $lightGray;
+      }
+
+      &-list {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+
+        .list__item {
+          font-size: 15px;
+          list-style-type: none;
+          color: $lightGray;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 768px) {
+  .block {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+
+    &__main {
+      display: flex;
+      flex-direction: column;
+
+      &--left {
+        width: auto;
+        border-bottom-left-radius: 0;
+      }
+
+      &--right {
+        width: auto;
+        border-bottom-left-radius: 20px;
+      }
+    }
+  }
+}

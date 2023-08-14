@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Karla", sans-serif;
+  background-color: hsl(204, 43%, 93%);
+}
+
+.block {
+  max-width: 800px;
+  border-radius: 20px;
+  background-color: white;
+}
+.block__header {
+  padding: 40px 30px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.block__header--title {
+  font-size: 24px;
+  color: hsl(179, 62%, 43%);
+}
+.block__header--subtitle {
+  margin-top: 10px;
+  font-size: 20px;
+  color: hsl(71, 73%, 54%);
+}
+.block__header--text {
+  margin-top: 10px;
+  font-size: 15px;
+  color: hsl(218, 22%, 67%);
+}
+.block__main {
+  display: flex;
+  flex-direction: row;
+}
+.block__main--left {
+  width: 50%;
+  padding: 40px 30px;
+  color: hsl(204, 43%, 93%);
+  background-color: hsl(179, 62%, 43%);
+  border-bottom-left-radius: 20px;
+}
+.block__main--left-title {
+  font-size: 24px;
+}
+.block__main--left-prices {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+}
+.block__main--left-prices .prices__info {
+  font-size: 24px;
+  margin-right: 10px;
+}
+.block__main--left-prices .prices__subinfo {
+  color: hsl(218, 22%, 67%);
+}
+.block__main--left-text {
+  margin-top: 5px;
+}
+.block__main--left-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px 20px;
+  align-self: center;
+  color: hsl(204, 43%, 93%);
+  border: 1px transparent;
+  background-color: hsl(71, 73%, 54%);
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.block__main--right {
+  width: 50%;
+  padding: 40px 30px;
+  background-color: hsl(71, 73%, 54%);
+  border-bottom-right-radius: 20px;
+}
+.block__main--right-title {
+  font-size: 24px;
+  color: hsl(204, 43%, 93%);
+}
+.block__main--right-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.block__main--right-list .list__item {
+  font-size: 15px;
+  list-style-type: none;
+  color: hsl(204, 43%, 93%);
+}
+
+@media screen and (min-width: 300px) and (max-width: 768px) {
+  .block {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+  .block__main {
+    display: flex;
+    flex-direction: column;
+  }
+  .block__main--left {
+    width: auto;
+    border-bottom-left-radius: 0;
+  }
+  .block__main--right {
+    width: auto;
+    border-bottom-left-radius: 20px;
+  }
+}/*# sourceMappingURL=style.css.map */
