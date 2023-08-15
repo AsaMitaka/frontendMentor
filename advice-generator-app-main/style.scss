@@ -1,0 +1,91 @@
+//Colors
+//Primary
+$lightCyan: hsl(193, 38%, 86%);
+$neonGreen: hsl(150, 100%, 66%);
+//Neutral
+$grayishBlue: hsl(217, 19%, 38%);
+$darkGrayishBlue: hsl(217, 19%, 24%);
+$darkBlue: hsl(218, 23%, 16%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $darkGrayishBlue;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 400px;
+  position: relative;
+  border-radius: 25px;
+  background-color: $grayishBlue;
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 50px;
+    color: $lightCyan;
+
+    &--title {
+      font-size: 20px;
+      font-weight: 200;
+      color: $neonGreen;
+    }
+
+    &--text {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 32px;
+    }
+  }
+
+  &__row {
+    width: 80%;
+    border: 1px solid $lightCyan;
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: -25px;
+    padding: 14px 16px;
+    border: 1px transparent;
+    background-color: $neonGreen;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 1px 1px 10px 2px $neonGreen;
+    }
+
+    &-icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 650px) {
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
+  .block {
+    margin: 30px 0;
+    width: 90%;
+  }
+}
