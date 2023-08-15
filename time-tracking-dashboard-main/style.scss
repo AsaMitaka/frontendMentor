@@ -1,0 +1,258 @@
+//Primary
+$blue: hsl(246, 80%, 60%);
+$lightRedWork: hsl(15, 100%, 70%);
+$softBlue: hsl(195, 74%, 62%);
+$lightRed: hsl(348, 100%, 68%);
+$limeGreen: hsl(145, 58%, 55%);
+$violet: hsl(264, 64%, 52%);
+$softOrange: hsl(43, 84%, 65%);
+//Neutral
+$veryDarkBlue: hsl(226, 43%, 10%);
+$darkBlue: hsl(235, 46%, 20%);
+$desaturatedBlue: hsl(235, 45%, 61%);
+$paleBlue: hsl(236, 100%, 87%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Rubik', sans-serif;
+  background-color: $veryDarkBlue;
+}
+
+.block {
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+
+  &__profile {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: $darkBlue;
+
+    &--header {
+      padding: 20px 30px;
+      background-color: $blue;
+      border-radius: 10px;
+
+      &-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 3px solid white;
+      }
+
+      &-text {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        font-size: 32px;
+        font-weight: 200;
+        color: white;
+
+        &--span {
+          font-size: 16px;
+          color: $paleBlue;
+        }
+      }
+    }
+
+    &--block {
+      flex: 2 1 auto;
+
+      .list {
+        padding: 10px 20px;
+
+        &__item {
+          padding: 10px 20px;
+          list-style-type: none;
+          color: $paleBlue;
+          cursor: pointer;
+
+          &--active {
+            padding: 10px 20px;
+            list-style-type: none;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  &__column {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+
+    &--row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 20px;
+
+      &-item {
+        position: relative;
+        flex: 1 0 calc(33.33% - 10px);
+        height: calc((350px / 2) - 10px);
+        border-radius: 15px;
+
+        .item__header {
+          width: 100%;
+          display: flex;
+          position: relative;
+          height: 50px;
+          padding: 10px 20px;
+          overflow: hidden;
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+
+          &--img {
+            position: absolute;
+            top: -5px;
+            right: 5px;
+            width: 50px;
+          }
+        }
+
+        .item__block {
+          display: flex;
+          flex-direction: column;
+          padding: 15px 20px;
+          position: absolute;
+          bottom: -1px;
+          width: 100%;
+          border-radius: 15px;
+          background-color: $darkBlue;
+
+          &--header {
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &-main {
+              font-size: 18px;
+              color: white;
+            }
+
+            &-menu {
+              cursor: pointer;
+            }
+          }
+
+          &--info {
+            margin-top: 10px;
+            font-size: 32px;
+            color: white;
+          }
+
+          &--subinfo {
+            margin-top: 5px;
+            font-weight: 200;
+            color: $paleBlue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.orange {
+  background-color: $lightRedWork;
+}
+
+.blue {
+  background-color: $softBlue;
+}
+
+.red {
+  background-color: $lightRed;
+}
+
+.green {
+  background-color: $limeGreen;
+}
+
+.purple {
+  background-color: $violet;
+}
+
+.yellow {
+  background-color: $softOrange;
+}
+
+@media screen and (min-width: 350px) and (max-width: 768px) {
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
+  .block {
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &__profile {
+      width: 90%;
+      margin-bottom: 20px;
+
+      &--header {
+        padding: 15px 40px;
+        display: flex;
+        align-items: center;
+
+        &-img {
+          width: 75px;
+          height: 75px;
+          margin-right: 15px;
+        }
+
+        &-text {
+          margin-top: 0;
+          color: white;
+
+          &--span {
+            margin-bottom: 5px;
+            color: $paleBlue;
+          }
+        }
+      }
+    }
+
+    &__column {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      gap: 0;
+
+      &--row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+
+        &-item {
+          flex: auto;
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
