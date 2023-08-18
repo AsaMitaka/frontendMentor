@@ -1,10 +1,11 @@
-import { Main } from './components';
+import { Aside, Container } from './components';
 
 const App: React.FC = () => {
   return (
-    <>
-      <Main />
-    </>
+    <div className="block">
+      <Aside />
+      <Container />
+    </div>
   );
 };
 
