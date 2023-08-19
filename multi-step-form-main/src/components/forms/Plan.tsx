@@ -1,8 +1,24 @@
 import arcade from '../../assets/icon-arcade.svg';
 import advanced from '../../assets/icon-advanced.svg';
 import pro from '../../assets/icon-pro.svg';
+import useStore from '../../store/store';
 
 const Plan = () => {
+  const onHandleNext = useStore((state) => state.setNextIndex);
+  const onHandleLast = useStore((state) => state.setLastIndex);
+
+  const handleLast = (e) => {
+    e.preventDefault();
+
+    onHandleLast();
+  };
+
+  const handleNext = (e) => {
+    e.preventDefault();
+
+    onHandleNext();
+  };
+
   return (
     <>
       <h1 className="container__title">Select your plan</h1>
@@ -74,8 +90,15 @@ const Plan = () => {
           </label>
         </div>
         <div className="container__form--btns">
-          <button className="container__form--btn">Back</button>
-          <input type="submit" value="Next Step" className="container__form--btn" />
+          <button className="container__form--btn start" onClick={handleLast}>
+            Back
+          </button>
+          <input
+            type="submit"
+            value="Next Step"
+            className="container__form--btn last"
+            onClick={handleNext}
+          />
         </div>
       </form>
     </>
