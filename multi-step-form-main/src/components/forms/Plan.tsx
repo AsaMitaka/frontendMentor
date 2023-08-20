@@ -7,17 +7,14 @@ const Plan = () => {
   const onHandleNext = useStore((state) => state.setNextIndex);
   const onHandleLast = useStore((state) => state.setLastIndex);
   const plan = useStore((state) => state.userInfo.plan);
+  const billing = useStore((state) => state.userInfo.billing);
+  const setPlan = useStore((state) => state.setPlan);
+  const setBilling = useStore((state) => state.setBilling);
 
   const handleLast = (e) => {
     e.preventDefault();
 
     onHandleLast();
-  };
-
-  const handleBillingChange = (e) => {
-    const selectedBilling = e.target.value;
-
-    useStore.setState({ setBilling: selectedBilling });
   };
 
   const handleNext = (e) => {
@@ -37,6 +34,14 @@ const Plan = () => {
           name="radio1"
           id="free"
           value="arcade"
+          checked={plan.arcade.active}
+          onChange={() =>
+            setPlan({
+              arcade: { active: true, price: 9 },
+              advanced: { active: false, price: 12 },
+              pro: { active: false, price: 15 },
+            })
+          }
         />
         <label className="container__form--label" htmlFor="free">
           <img src={arcade} alt="arcade" className="container__form--label-img" />
@@ -51,6 +56,14 @@ const Plan = () => {
           name="radio1"
           id="advanced"
           value="advanced"
+          checked={plan.advanced.active}
+          onChange={() =>
+            setPlan({
+              arcade: { active: false, price: 9 },
+              advanced: { active: true, price: 12 },
+              pro: { active: false, price: 15 },
+            })
+          }
         />
         <label className="container__form--label" htmlFor="advanced">
           <img src={advanced} alt="advanced" className="container__form--label-img" />
@@ -65,6 +78,14 @@ const Plan = () => {
           name="radio1"
           id="pro"
           value="pro"
+          checked={plan.pro.active}
+          onChange={() =>
+            setPlan({
+              arcade: { active: false, price: 9 },
+              advanced: { active: false, price: 12 },
+              pro: { active: true, price: 15 },
+            })
+          }
         />
         <label className="container__form--label" htmlFor="pro">
           <img src={pro} alt="pro" className="container__form--label-img" />
@@ -81,7 +102,8 @@ const Plan = () => {
               id="monthly"
               value="monthly"
               className="container__form--radio-info--rad"
-              checked={plan.monthly}
+              checked={billing.monthly}
+              onChange={() => setBilling({ monthly: true, yearly: false })}
             />
             Monthly
           </label>
@@ -93,7 +115,8 @@ const Plan = () => {
               id="yearly"
               value="yearly"
               className="container__form--radio-info--rad"
-              checked={plan.yearly}
+              checked={billing.yearly}
+              onChange={() => setBilling({ monthly: false, yearly: true })}
             />
             Yearly
           </label>

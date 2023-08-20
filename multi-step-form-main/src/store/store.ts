@@ -8,16 +8,36 @@ const useStore = create((set) => ({
       phonenumber: '',
     },
     plan: {
-      arcade: true,
-      advanced: false,
-      pro: false,
+      arcade: {
+        price: 9,
+        active: true,
+      },
+      advanced: {
+        price: 12,
+        active: false,
+      },
+      pro: {
+        price: 15,
+        active: false,
+      },
+    },
+    billing: {
       monthly: true,
       yearly: false,
     },
     addons: {
-      online: false,
-      storage: false,
-      customize: false,
+      online: {
+        price: 1,
+        active: false,
+      },
+      storage: {
+        price: 2,
+        active: false,
+      },
+      customize: {
+        price: 2,
+        active: false,
+      },
     },
   },
   forms: [],
@@ -36,13 +56,28 @@ const useStore = create((set) => ({
         plan: data,
       },
     })),
-  setAddons: (data) =>
+  setBilling: (data) => {
     set((state) => ({
       userInfo: {
         ...state.userInfo,
-        addons: data,
+        billing: data,
+      },
+    }));
+  },
+  setAddons: (addonName, active) =>
+    set((state) => ({
+      userInfo: {
+        ...state.userInfo,
+        addons: {
+          ...state.userInfo.addons,
+          [addonName]: {
+            ...state.userInfo.addons[addonName],
+            active: active,
+          },
+        },
       },
     })),
+
   setForms: (data) => {
     set((state) => ({
       forms: data,

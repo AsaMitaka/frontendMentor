@@ -18,13 +18,6 @@ const Addons = () => {
     onHandleNext();
   };
 
-  const handleAddons = (e) => {
-    const name = e.target.name;
-    const checked = e.target.checked;
-
-    setAddons({ ...addons, [name]: checked });
-  };
-
   return (
     <>
       <h1 className="container__title"> Pick add-ons</h1>
@@ -37,8 +30,8 @@ const Addons = () => {
               name="online"
               id="online"
               className="container__form--fieldset-block--input"
-              checked={addons.online}
-              onChange={handleAddons}
+              checked={addons.online.active}
+              onChange={() => setAddons('online', !addons.online.active)}
             />
             <label htmlFor="online" className="container__form--fieldset-block--label">
               <div className="container__form--fieldset-block--label-div">
@@ -56,8 +49,8 @@ const Addons = () => {
               name="storage"
               id="storage"
               className="container__form--fieldset-block--input"
-              checked={addons.storage}
-              onChange={handleAddons}
+              checked={addons.storage.active}
+              onChange={() => setAddons('storage', !addons.storage.active)}
             />
             <label htmlFor="storage" className="container__form--fieldset-block--label">
               <div className="container__form--fieldset-block--label-div">
@@ -75,8 +68,8 @@ const Addons = () => {
               name="customize"
               id="customize"
               className="container__form--fieldset-block--input"
-              checked={addons.customize}
-              onChange={handleAddons}
+              checked={addons.customize.active}
+              onChange={() => setAddons('customize', !addons.customize.active)}
             />
             <label htmlFor="customize" className="container__form--fieldset-block--label">
               <div className="container__form--fieldset-block--label-div">

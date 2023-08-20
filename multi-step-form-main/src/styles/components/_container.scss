@@ -147,6 +147,46 @@
       }
     }
 
+    &--block {
+      display: flex;
+      flex-direction: column;
+
+      &-year {
+        color: $marineBlue;
+
+        &--span {
+          margin-left: 10px;
+          color: $purplishBlue;
+          font-size: 18px;
+          font-weight: 600;
+        }
+      }
+
+      &-item {
+        display: flex;
+        flex-direction: row;
+        margin: 10px 0;
+        padding: 3px 10px;
+        text-transform: uppercase;
+        color: $coolGray;
+
+        &--span {
+          margin-left: 10px;
+          text-transform: lowercase;
+          color: $marineBlue;
+          font-weight: 600;
+        }
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
     &--btns {
       margin-top: auto;
       display: flex;
