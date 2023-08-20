@@ -12,7 +12,9 @@ const Container: React.FC = () => {
     setForms([Personal, Plan, Addons, Summary, Finish]);
   }, []);
 
-  return <div className="container">{NowContainer && <NowContainer />}</div>;
+  return (
+    <div className="container">{NowContainer && <NowContainer key={`${formIndex}__form`} />}</div>
+  );
 };
 
 export default Container;

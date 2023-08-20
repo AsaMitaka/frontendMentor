@@ -8,9 +8,11 @@ const useStore = create((set) => ({
       phonenumber: '',
     },
     plan: {
-      arcade: false,
+      arcade: true,
       advanced: false,
       pro: false,
+      monthly: true,
+      yearly: false,
     },
     addons: {
       online: false,

@@ -3,6 +3,8 @@ import useStore from '../../store/store';
 const Addons = () => {
   const onHandleNext = useStore((state) => state.setNextIndex);
   const onHandleLast = useStore((state) => state.setLastIndex);
+  const addons = useStore((state) => state.userInfo.addons);
+  const setAddons = useStore((state) => state.setAddons);
 
   const handleLast = (e) => {
     e.preventDefault();
@@ -16,6 +18,13 @@ const Addons = () => {
     onHandleNext();
   };
 
+  const handleAddons = (e) => {
+    const name = e.target.name;
+    const checked = e.target.checked;
+
+    setAddons({ ...addons, [name]: checked });
+  };
+
   return (
     <>
       <h1 className="container__title"> Pick add-ons</h1>
@@ -25,11 +34,13 @@ const Addons = () => {
           <div className="container__form--fieldset-block">
             <input
               type="checkbox"
-              name="service"
-              id="service"
+              name="online"
+              id="online"
               className="container__form--fieldset-block--input"
+              checked={addons.online}
+              onChange={handleAddons}
             />
-            <label htmlFor="service" className="container__form--fieldset-block--label">
+            <label htmlFor="online" className="container__form--fieldset-block--label">
               <div className="container__form--fieldset-block--label-div">
                 <p className="container__form--fieldset-block--label-div--title">Online service</p>
                 <p className="container__form--fieldset-block--label-div--subtitle">
@@ -45,6 +56,8 @@ const Addons = () => {
               name="storage"
               id="storage"
               className="container__form--fieldset-block--input"
+              checked={addons.storage}
+              onChange={handleAddons}
             />
             <label htmlFor="storage" className="container__form--fieldset-block--label">
               <div className="container__form--fieldset-block--label-div">
@@ -59,11 +72,13 @@ const Addons = () => {
           <div className="container__form--fieldset-block">
             <input
               type="checkbox"
-              name="theme"
-              id="theme"
+              name="customize"
+              id="customize"
               className="container__form--fieldset-block--input"
+              checked={addons.customize}
+              onChange={handleAddons}
             />
-            <label htmlFor="theme" className="container__form--fieldset-block--label">
+            <label htmlFor="customize" className="container__form--fieldset-block--label">
               <div className="container__form--fieldset-block--label-div">
                 <p className="container__form--fieldset-block--label-div--title">
                   Customizable Profile

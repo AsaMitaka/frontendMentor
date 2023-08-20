@@ -6,11 +6,18 @@ import useStore from '../../store/store';
 const Plan = () => {
   const onHandleNext = useStore((state) => state.setNextIndex);
   const onHandleLast = useStore((state) => state.setLastIndex);
+  const plan = useStore((state) => state.userInfo.plan);
 
   const handleLast = (e) => {
     e.preventDefault();
 
     onHandleLast();
+  };
+
+  const handleBillingChange = (e) => {
+    const selectedBilling = e.target.value;
+
+    useStore.setState({ setBilling: selectedBilling });
   };
 
   const handleNext = (e) => {
@@ -74,6 +81,7 @@ const Plan = () => {
               id="monthly"
               value="monthly"
               className="container__form--radio-info--rad"
+              checked={plan.monthly}
             />
             Monthly
           </label>
@@ -85,6 +93,7 @@ const Plan = () => {
               id="yearly"
               value="yearly"
               className="container__form--radio-info--rad"
+              checked={plan.yearly}
             />
             Yearly
           </label>
