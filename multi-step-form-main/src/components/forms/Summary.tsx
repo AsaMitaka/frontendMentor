@@ -1,24 +1,25 @@
+import { FormEvent } from 'react';
+import PersonalInfo from '../../@types/userInfo';
 import useStore from '../../store/store';
 
-const Summary = () => {
-  const onHandleNext = useStore((state) => state.setNextIndex);
-  const onHandleLast = useStore((state) => state.setLastIndex);
-  const userInfo = useStore((state) => state.userInfo);
-  console.log(userInfo);
+const Summary: React.FC = () => {
+  const onHandleNext = useStore((state: PersonalInfo) => state.setNextIndex);
+  const onHandleLast = useStore((state: PersonalInfo) => state.setLastIndex);
+  const userInfo = useStore((state: PersonalInfo) => state.userInfo);
 
-  const handleLast = (e) => {
+  const handleLast = (e: FormEvent) => {
     e.preventDefault();
 
     onHandleLast();
   };
 
-  const handleNext = (e) => {
+  const handleNext = (e: FormEvent) => {
     e.preventDefault();
 
     onHandleNext();
   };
 
-  const calculateTotal = () => {
+  const calculateTotal = (): number => {
     let total = 0;
 
     Object.values(userInfo.plan).forEach((planData) => {
@@ -51,8 +52,8 @@ const Summary = () => {
             if (planData.active) {
               return (
                 <div key={planName} className="container__form--block-item">
-                  {planName}
-                  <span className="container__form--block-item--span">price: {planData.price}</span>
+                  {planName[0].toUpperCase() + planName.slice(1).toLowerCase()}:
+                  <span className="container__form--block-item--span">${planData.price}/mo</span>
                 </div>
               );
             }
@@ -63,10 +64,8 @@ const Summary = () => {
             if (addonData.active) {
               return (
                 <div key={addonName} className="container__form--block-item">
-                  {addonName}
-                  <span className="container__form--block-item--span">
-                    price: {addonData.price}
-                  </span>
+                  {addonName[0].toUpperCase() + addonName.slice(1).toLowerCase()}:
+                  <span className="container__form--block-item--span">+${addonData.price}/mo</span>
                 </div>
               );
             }

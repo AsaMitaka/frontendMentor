@@ -1,37 +1,54 @@
-interface planTypeInterface {
+interface PersonalInfoInterface {
+  name: string;
+  email: string;
+  phonenumber: string;
+}
+
+interface PlanTypeInterface {
   price: number;
   active: boolean;
 }
 
-interface addonTypeInterface {
-  price: number;
-  active: boolean;
+interface PlanInterface {
+  arcade: PlanTypeInterface;
+  advanced: PlanTypeInterface;
+  pro: PlanTypeInterface;
 }
 
-interface billingInterface {
+interface BillingInterface {
   monthly: boolean;
   yearly: boolean;
 }
 
-interface planInterface {
-  arcade: planTypeInterface;
-  advanced: planTypeInterface;
-  pro: planTypeInterface;
+interface AddonTypeInterface {
+  price: number;
+  active: boolean;
 }
 
-interface addonsInterface {
-  online: addonTypeInterface;
-  storage: addonTypeInterface;
-  customize: addonTypeInterface;
+interface AddonsInterface {
+  online: AddonTypeInterface;
+  storage: AddonTypeInterface;
+  customize: AddonTypeInterface;
 }
 
-interface personalInfo {
-  name: string;
-  email: string;
-  phonenumber: string;
-  plan: planInterface;
-  billing: billingInterface;
-  addons: addonsInterface;
-  forms: React.Element[] | [];
+interface UserInfoInterface {
+  personalInfo: PersonalInfoInterface;
+  plan: PlanInterface;
+  billing: BillingInterface;
+  addons: AddonsInterface;
+}
+
+interface PersonalInfo {
+  userInfo: UserInfoInterface;
+  forms: React.FC[] | [];
   formIndex: number;
+  setPersonalInfo: (data: PersonalInfoInterface) => void;
+  setPlan: (data: PlanInterface) => void;
+  setBilling: (data: BillingInterface) => void;
+  setAddons: (addonName: keyof AddonsInterface, active: boolean) => void;
+  setForms: (data: React.FC[]) => void;
+  setLastIndex: () => void;
+  setNextIndex: () => void;
 }
+
+export default PersonalInfo;

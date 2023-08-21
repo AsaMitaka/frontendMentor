@@ -1,18 +1,20 @@
+import { FormEvent } from 'react';
 import useStore from '../../store/store';
+import PersonalInfo from '../../@types/userInfo';
 
-const Addons = () => {
-  const onHandleNext = useStore((state) => state.setNextIndex);
-  const onHandleLast = useStore((state) => state.setLastIndex);
-  const addons = useStore((state) => state.userInfo.addons);
-  const setAddons = useStore((state) => state.setAddons);
+const Addons: React.FC = () => {
+  const onHandleNext = useStore((state: PersonalInfo) => state.setNextIndex);
+  const onHandleLast = useStore((state: PersonalInfo) => state.setLastIndex);
+  const addons = useStore((state: PersonalInfo) => state.userInfo.addons);
+  const setAddons = useStore((state: PersonalInfo) => state.setAddons);
 
-  const handleLast = (e) => {
+  const handleLast = (e: FormEvent) => {
     e.preventDefault();
 
     onHandleLast();
   };
 
-  const handleNext = (e) => {
+  const handleNext = (e: FormEvent) => {
     e.preventDefault();
 
     onHandleNext();

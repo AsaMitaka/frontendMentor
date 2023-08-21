@@ -1,6 +1,7 @@
 import { create } from 'zustand';
+import PersonalInfo from '../@types/userInfo';
 
-const useStore = create((set) => ({
+const useStore = create<PersonalInfo>()((set) => ({
   userInfo: {
     personalInfo: {
       name: '',
@@ -42,20 +43,22 @@ const useStore = create((set) => ({
   },
   forms: [],
   formIndex: 0,
-  setPersonalInfo: (data) =>
+  setPersonalInfo: (data) => {
     set((state) => ({
       userInfo: {
         ...state.userInfo,
         personalInfo: data,
       },
-    })),
-  setPlan: (data) =>
+    }));
+  },
+  setPlan: (data) => {
     set((state) => ({
       userInfo: {
         ...state.userInfo,
         plan: data,
       },
-    })),
+    }));
+  },
   setBilling: (data) => {
     set((state) => ({
       userInfo: {
@@ -64,7 +67,7 @@ const useStore = create((set) => ({
       },
     }));
   },
-  setAddons: (addonName, active) =>
+  setAddons: (addonName, active) => {
     set((state) => ({
       userInfo: {
         ...state.userInfo,
@@ -76,10 +79,10 @@ const useStore = create((set) => ({
           },
         },
       },
-    })),
-
+    }));
+  },
   setForms: (data) => {
-    set((state) => ({
+    set(() => ({
       forms: data,
     }));
   },

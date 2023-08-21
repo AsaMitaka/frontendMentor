@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 import useStore from '../store/store';
 import { Addons, Finish, Personal, Plan, Summary } from './forms';
+import PersonalInfo from '../@types/userInfo';
 
 const Container: React.FC = () => {
-  const forms = useStore((state) => state.forms);
-  const formIndex = useStore((state) => state.formIndex);
-  const setForms = useStore((state) => state.setForms);
+  const forms = useStore((state: PersonalInfo) => state.forms);
+  const formIndex = useStore((state: PersonalInfo) => state.formIndex);
+  const setForms = useStore((state: PersonalInfo) => state.setForms);
   const NowContainer = forms[formIndex];
 
   useEffect(() => {

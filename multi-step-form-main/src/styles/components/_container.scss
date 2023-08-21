@@ -165,16 +165,17 @@
       &-item {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         margin: 10px 0;
         padding: 3px 10px;
-        text-transform: uppercase;
-        color: $coolGray;
+        color: $marineBlue;
+        font-weight: 700;
 
         &--span {
           margin-left: 10px;
-          text-transform: lowercase;
-          color: $marineBlue;
-          font-weight: 600;
+          color: $purplishBlue;
+          font-size: 18px;
+          font-weight: 700;
         }
 
         &:first-child {

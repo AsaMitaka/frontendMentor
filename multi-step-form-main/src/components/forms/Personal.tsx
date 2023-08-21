@@ -1,11 +1,13 @@
+import { ChangeEvent, FormEvent } from 'react';
 import useStore from '../../store/store';
+import PersonalInfo from '../../@types/userInfo';
 
 const Personal = () => {
-  const personalInfo = useStore((state) => state.userInfo.personalInfo);
-  const setHandlePersonalInfo = useStore((state) => state.setPersonalInfo);
-  const onHandleNext = useStore((state) => state.setNextIndex);
+  const personalInfo = useStore((state: PersonalInfo) => state.userInfo.personalInfo);
+  const setHandlePersonalInfo = useStore((state: PersonalInfo) => state.setPersonalInfo);
+  const onHandleNext = useStore((state: PersonalInfo) => state.setNextIndex);
 
-  const setName = (e) => {
+  const setName = (e: ChangeEvent<HTMLInputElement>) => {
     const name = e.target.value;
 
     if (name.length > 20) {
@@ -15,7 +17,7 @@ const Personal = () => {
     setHandlePersonalInfo({ ...personalInfo, name });
   };
 
-  const setEmail = (e) => {
+  const setEmail = (e: ChangeEvent<HTMLInputElement>) => {
     const email = e.target.value;
 
     if (email.length > 22) {
@@ -25,22 +27,46 @@ const Personal = () => {
     setHandlePersonalInfo({ ...personalInfo, email });
   };
 
-  const setPhoneNumber = (e) => {
+  const setPhoneNumber = (e: ChangeEvent<HTMLInputElement>) => {
     const phoneNumber = e.target.value;
 
-    if (phoneNumber.length > 12) {
+    if (phoneNumber.length > 14) {
       return;
     }
 
     setHandlePersonalInfo({ ...personalInfo, phonenumber: phoneNumber });
   };
 
-  const onHandleSubmit = (e) => {
+  const onHandleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
     if (!(personalInfo.phonenumber && personalInfo.email && personalInfo.name)) {
       console.log('Such data is empty');
 
+      return;
+    }
+
+    if (personalInfo.name.length < 3) {
+      console.warn('Your name is too short');
+      return;
+    }
+
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(personalInfo.email)) {
+      console.warn('Invalid email format');
+      return;
+    }
+
+    const phonePatternWithPlus38 = /^\+38\s\d{10}$/; // +38 0123456789
+    const phonePatternWithoutPlus38 = /^\d{10}$/; // 0123456789
+
+    if (
+      !(
+        phonePatternWithPlus38.test(personalInfo.phonenumber) ||
+        phonePatternWithoutPlus38.test(personalInfo.phonenumber)
+      )
+    ) {
+      console.log('Invalid phone number format');
       return;
     }
 

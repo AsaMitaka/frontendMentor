@@ -1,4 +1,4 @@
-const Finish = () => {
+const Finish: React.FC = () => {
   return (
     <>
       <h1 className="container__title">Thank you!</h1>

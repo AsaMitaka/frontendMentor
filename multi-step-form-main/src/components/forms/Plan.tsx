@@ -1,23 +1,25 @@
+import { FormEvent } from 'react';
 import arcade from '../../assets/icon-arcade.svg';
 import advanced from '../../assets/icon-advanced.svg';
 import pro from '../../assets/icon-pro.svg';
 import useStore from '../../store/store';
+import PersonalInfo from '../../@types/userInfo';
 
-const Plan = () => {
-  const onHandleNext = useStore((state) => state.setNextIndex);
-  const onHandleLast = useStore((state) => state.setLastIndex);
-  const plan = useStore((state) => state.userInfo.plan);
-  const billing = useStore((state) => state.userInfo.billing);
-  const setPlan = useStore((state) => state.setPlan);
-  const setBilling = useStore((state) => state.setBilling);
+const Plan: React.FC = () => {
+  const onHandleNext = useStore((state: PersonalInfo) => state.setNextIndex);
+  const onHandleLast = useStore((state: PersonalInfo) => state.setLastIndex);
+  const plan = useStore((state: PersonalInfo) => state.userInfo.plan);
+  const billing = useStore((state: PersonalInfo) => state.userInfo.billing);
+  const setPlan = useStore((state: PersonalInfo) => state.setPlan);
+  const setBilling = useStore((state: PersonalInfo) => state.setBilling);
 
-  const handleLast = (e) => {
+  const handleLast = (e: FormEvent) => {
     e.preventDefault();
 
     onHandleLast();
   };
 
-  const handleNext = (e) => {
+  const handleNext = (e: FormEvent) => {
     e.preventDefault();
 
     onHandleNext();

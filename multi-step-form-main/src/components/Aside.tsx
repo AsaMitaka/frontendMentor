@@ -1,6 +1,6 @@
 import useStore from '../store/store';
 
-const Aside = () => {
+const Aside: React.FC = () => {
   const formIndex = useStore((state) => state.formIndex);
 
   const items = [
