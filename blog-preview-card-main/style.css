@@ -1,0 +1,106 @@
+@font-face {
+  font-family: 'Fightree';
+  src: url('./assets/fonts/Figtree-VariableFont_wght.ttf') format('ttf');
+  font-weight: 600 800;
+  font-display: swap;
+}
+
+:root {
+  --yellow: hsl(47, 88%, 63%);
+  --white: hsl(0, 0%, 100%);
+  --grey: hsl(0, 0%, 50%);
+  --black: hsl(0, 0%, 7%);
+  --font-family-default: 'Fightree';
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--yellow);
+}
+
+.usercard {
+  width: 385px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 25px;
+  border: 1px solid var(--black);
+  border-radius: 20px;
+  background-color: var(--white);
+  box-shadow: 10px 10px 0px 0px var(--black);
+}
+
+.usercard__img {
+  border-radius: 10px;
+}
+
+.usercard__label {
+  margin-top: 30px;
+  align-self: flex-start;
+  padding: 5px 10px;
+  font-weight: bold;
+  background-color: var(--yellow);
+}
+
+.usercard__data {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.usercard__link {
+  margin-top: 20px;
+  color: var(--black);
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.usercard__link:hover {
+  color: var(--yellow);
+}
+
+.usercard__info {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.usercard__user {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.usercard__user-img {
+  width: 35px;
+  height: 35px;
+}
+
+.usercard__user-name {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    height: 100dvh;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .usercard {
+    width: 100%;
+  }
+}
