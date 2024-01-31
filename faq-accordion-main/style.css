@@ -1,0 +1,145 @@
+@font-face {
+  font-family: 'Work Sans';
+  src: url('./assets/fonts/WorkSans-VariableFont_wght.ttf') format('ttf');
+  src: url('./assets/fonts/WorkSans-Italic-VariableFont_wght.ttf') format('ttf');
+  font-weight: 400 600 700;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --lightPink: hsl(275, 100%, 97%);
+  --grayishPurple: hsl(292, 16%, 49%);
+  --darkPurple: hsl(292, 42%, 14%);
+  --font-face-default: 'Work Sans';
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: var(--lightPink);
+}
+
+.background-img {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-image: url('./assets/images/background-pattern-desktop.svg');
+  height: 260px;
+}
+
+.accordion {
+  z-index: 2;
+  width: 500px;
+  padding: 2em 2em;
+  font-family: var(--font-face-default);
+  background-color: white;
+  border-radius: 15px;
+}
+
+.accordion__heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.accordion__heading-img {
+}
+
+.accordion__heading-title {
+  font-size: 48px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.accordion__list {
+}
+
+.accordion__list-item {
+  list-style-type: none;
+  padding: 1.1em 0;
+}
+
+.accordion__list-item:hover {
+  color: purple;
+}
+
+.accordion__list-item img:hover {
+  opacity: 0.5;
+}
+
+.accordion-btn {
+  display: none;
+}
+
+.accordion-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.accordio-header--title {
+  font-size: 18px;
+}
+
+.content {
+  margin-top: 1em;
+  margin-bottom: 0.8em;
+  line-height: 1.1em;
+}
+
+.context-text {
+  color: var(--grayishPurple);
+}
+
+.closed {
+  display: none;
+}
+
+.opened {
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    flex-direction: row;
+  }
+  .background-img {
+    height: 220px;
+    background-image: url(./assets/images/background-pattern-mobile.svg);
+  }
+
+  .accordion {
+    width: 100%;
+    margin: 0 20px;
+    border-radius: 10px;
+  }
+
+  .accordion__heading-img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .accordion__heading-title {
+    font-size: 28px;
+    font-weight: bolder;
+  }
+
+  .content {
+    margin-bottom: 1rem;
+  }
+}
