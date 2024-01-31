@@ -6,7 +6,7 @@
 }
 
 @font-face {
-  font-family: 'young-serif';
+  font-family: 'Young Serif';
   src: url('./assets/fonts/young-serif/YoungSerif-Regular.ttf') format('ttf');
   font-weight: 100 900;
   font-display: swap;
@@ -29,7 +29,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: --var(--font-face-default);
+  font-family: var(--font-face-default);
 }
 
 body {
