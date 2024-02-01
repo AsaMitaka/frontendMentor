@@ -1,0 +1,143 @@
+:root {
+  --red: hsl(0, 100%, 74%);
+  --green: hsl(154, 59%, 51%);
+  --blue: hsl(248, 32%, 49%);
+  --darkBlue: hsl(249, 10%, 26%);
+  --grayishBlue: hsl(246, 25%, 77%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  background-image: url('./images/bg-intro-desktop.png');
+  background-size: cover;
+  background-color: var(--red);
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 6em 0 5em;
+}
+
+.info__block-title {
+  color: white;
+  font-size: 54px;
+  font-weight: bolder;
+}
+
+.info__block-subtitle {
+  margin-top: 1em;
+  color: white;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content__header {
+  align-self: center;
+  padding: 1em 4.5em;
+  font-size: 16x;
+  font-weight: 700;
+  color: white;
+  background-color: purple;
+  border-radius: 10px;
+  box-shadow: 0px 5px 2px 0px var(--darkBlue);
+}
+
+.content__header-alt {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.content__form {
+  margin-top: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.7em;
+  padding: 30px 30px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.content__form-input {
+  padding: 15px 15px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 3px;
+}
+
+.content__form-btn {
+  padding: 1em 0;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: var(--green);
+  cursor: pointer;
+}
+
+.content__form-terms {
+  color: grey;
+  font-size: 14px;
+}
+
+.content__form-terms--alt {
+  margin-left: 5px;
+  text-decoration: none;
+  color: var(--red);
+}
+
+@media screen and (max-width: 400px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 4em 2em;
+    background-image: url('./images/bg-intro-mobile.png');
+  }
+
+  .info {
+    flex: auto;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 5em;
+  }
+
+  .info__block-title {
+    font-size: 36px;
+    font-weight: bolder;
+  }
+  .info__block-subtitle {
+    font-size: 22px;
+  }
+
+  .content {
+    flex: auto;
+    padding: 0;
+  }
+
+  .content__form {
+    box-shadow: 1px 1px 5px 2px var(--darkBlue);
+  }
+}
