@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+:root {
+  --desaturatedRed: hsl(0, 36%, 70%);
+  --softRed: hsl(0, 93%, 68%);
+  --darkGrayishRed: hsl(0, 6%, 24%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.left {
+  width: 60%;
+  background: url(images/bg-pattern-desktop.svg);
+  background-size: cover;
+}
+
+.header {
+  padding: 4rem 17rem 0;
+}
+
+.header__logo {
+  width: 200px;
+}
+
+.main {
+  padding: 10rem 17rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main__title {
+  font-size: 80px;
+  letter-spacing: 1.7rem;
+  line-height: 5.5rem;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.main__title-first {
+  color: var(--desaturatedRed);
+  font-weight: 100;
+  letter-spacing: 1.65rem;
+}
+
+.main__info {
+  margin-top: 2.2rem;
+  font-size: 22px;
+  line-height: 2rem;
+  color: var(--desaturatedRed);
+}
+
+.main__form {
+  margin-top: 4.2rem;
+}
+
+.main__form-block {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.main__form-input {
+  flex: 1;
+  padding: 25px 40px;
+  color: var(--desaturatedRed);
+  font-size: 22px;
+  border: 1px solid var(--desaturatedRed);
+  border-radius: 36px;
+  transition: border-color 0.3s ease;
+}
+
+.main__form-input:focus::before,
+.main__form-input:not(:placeholder-shown)::before {
+  border-color: var(--softRed);
+}
+
+.main__form-input::placeholder {
+  color: var(--desaturatedRed);
+  border-color: var(--softRed);
+}
+
+.main__form-button {
+  position: absolute;
+  right: -1px;
+  padding: 2em 4.5em;
+  border: 1px solid transparent;
+  border-radius: 3em;
+  background-color: var(--desaturatedRed);
+  cursor: pointer;
+  z-index: 100;
+}
+
+.main__form-button--icon {
+}
+
+.error {
+  color: var(--softRed);
+}
+
+.right {
+  width: 40%;
+  background-image: url('./images/hero-desktop.jpg');
+  background-size: cover;
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100%;
+  }
+
+  .left {
+    width: 100%;
+    padding: 0 2em;
+  }
+
+  .header {
+    display: none;
+  }
+
+  .main {
+    margin-top: 4em;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main__title {
+    text-align: center;
+    font-size: 36px;
+    line-height: 1.2em;
+    letter-spacing: 0.4em;
+  }
+
+  .main__title-first {
+    font-size: 40px;
+    letter-spacing: 0.2em;
+  }
+
+  .main__info {
+    margin-top: 1em;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5em;
+  }
+
+  .main__form {
+    margin-top: 1.5em;
+  }
+
+  .main__form-input {
+    flex: none;
+    padding: 1.5em 7em;
+    font-size: 12px;
+  }
+
+  .main__form-button {
+    padding: 1em 2em;
+  }
+
+  .right {
+    width: 100%;
+    height: 250px;
+    background: url('./images/hero-mobile.jpg');
+    background-size: cover;
+  }
+}
