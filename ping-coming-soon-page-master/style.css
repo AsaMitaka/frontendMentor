@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+:root {
+  --blue: hsl(223, 87%, 63%);
+  --paleBlue: hsl(223, 100%, 88%);
+  --lightRed: hsl(354, 100%, 66%);
+  --gray: hsl(0, 0%, 59%);
+  --veryDarkBlue: hsl(209, 33%, 12%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Libre Franklin';
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 2em 0;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+}
+
+.header__figure {
+}
+
+.header__figure-logo {
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__title {
+  margin-top: 1em;
+  font-size: 3em;
+  font-weight: 100;
+}
+
+.main__title--strong {
+  font-weight: 900;
+}
+
+.main__text {
+  margin: 1em 0;
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+.main__form {
+  width: 100%;
+  display: flex;
+  gap: 2em;
+}
+
+.main__form-input {
+  width: 65%;
+  padding: 1.5em 3em;
+  font-size: 1.2em;
+  border-radius: 2em;
+  border: 0.1em solid var(--paleBlue);
+}
+
+.main__form-input::placeholder {
+  color: var(--paleBlue);
+}
+
+.main__form-input:focus {
+  outline: none;
+  border: 0.1em solid var(--veryDarkBlue);
+  box-shadow: 0 0 0.2em var(--blue);
+}
+
+.errorinput {
+  border: 0.1em solid var(--lightRed);
+}
+
+.main__form-btn {
+  width: 35%;
+  padding: 1.5em 0;
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--white);
+  border: 0.1em solid transparent;
+  border-radius: 5em;
+  background-color: var(--blue);
+  cursor: pointer;
+}
+
+.main__form-btn:focus {
+  border: 0.1em solid var(--veryDarkBlue);
+  box-shadow: 0.1em 0.1em 0.5em var(--veryDarkBlue);
+  outline: none;
+}
+
+.main__form-img {
+  margin-top: 1em;
+  width: 100%;
+}
+
+.main__error {
+  padding: 1em 2em;
+  color: var(--lightRed);
+}
+
+.footer {
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5em;
+}
+
+.footer__nav {
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+
+.nav__list-item {
+  list-style-type: none;
+  padding: 0.65em 0.75em 0.55em;
+  border: 0.1em solid var(--paleBlue);
+  border-radius: 5em;
+  cursor: pointer;
+}
+
+.nav__list-item:hover {
+  background-color: var(--blue);
+}
+
+.nav__list-item--link {
+  text-decoration: none;
+}
+
+.item--icon {
+  width: 1.75em;
+  height: 1.75em;
+}
+
+.footer__text {
+  font-size: 1.2em;
+  font-weight: 200;
+  color: var(--gray);
+}
+
+@media screen and (max-width: 400px) {
+  .wrapper {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 1em 2em;
+  }
+
+  .main {
+    flex: 1;
+  }
+
+  .main__title {
+    font-size: 1.75em;
+    text-align: center;
+  }
+
+  .main__text {
+    font-size: 1.25em;
+  }
+
+  .main__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .main__form-input {
+    width: 100%;
+    padding: 1em 2em;
+  }
+
+  .main__form-btn {
+    width: 100%;
+    padding: 1em 2em;
+    box-shadow: 0.1em 0.25em 0.5em var(--blue);
+  }
+
+  .footer {
+    margin-top: 0;
+    gap: 1em;
+  }
+
+  .item--icon {
+    width: 1.25em;
+    height: 1.25em;
+  }
+
+  .footer__text {
+    margin-top: 0.5em;
+  }
+}
