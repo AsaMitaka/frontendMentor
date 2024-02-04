@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Fylo data storage component</title>
+  </head>
+  <body>
+    <article class="wrapper">
+      <section class="section__files">
+        <figure class="section__files-logo">
+          <img class="section__files-logo--img" src="./images/logo.svg" alt="logo" />
+        </figure>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__list-item">
+              <a class="nav__list-item--link" href="#">
+                <img class="link-img" src="./images/icon-document.svg" alt="document" />
+              </a>
+            </li>
+            <li class="nav__list-item">
+              <a class="nav__list-item--link" href="#">
+                <img class="link-img" src="./images/icon-folder.svg" alt="folter" />
+              </a>
+            </li>
+            <li class="nav__list-item">
+              <a class="nav__list-item--link" href="#">
+                <img class="link-img" src="./images/icon-upload.svg" alt="upload" />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <section class="section__storage">
+        <div class="storage-block">
+          <div class="storage-block--title">185</div>
+          <div class="title-span">GB Left</div>
+        </div>
+        <label for="bar" class="section__storage-title">
+          You’ve used <strong class="section__storage-title--strong">815 GB</strong> of your storage
+        </label>
+        <progress value="70" max="100" class="section__storage-bar" id="bar"></progress>
+        <div class="bar-block">
+          <div class="bar-block--item">0 GB</div>
+          <div class="bar-block--item">1000 GB</div>
+        </div>
+      </section>
+    </article>
+  </body>
+</html>
