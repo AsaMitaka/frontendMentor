@@ -11,7 +11,7 @@ const Plan = () => {
   const { nextPage } = usePage();
 
   const [isValid, setIsValid] = useState(false);
-  const [plan, setPlan] = useState<null | number>(subscription.index);
+  const [plan, setPlan] = useState<number>(subscription.index ?? -1);
   const [billing, setBilling] = useState<'Monthly' | 'Yearly'>(
     subscription.billingCycle,
   );
@@ -33,7 +33,7 @@ const Plan = () => {
 
     setSubscription({
       price: selectedPlan.price,
-      plan: selectedPlan.title,
+      plan: selectedPlan.title as 'Arcade' | 'Advanced' | 'Pro',
       billingCycle: billing,
       index: plan,
     });
