@@ -1,23 +1,508 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;300;400;600;700;900&display=swap');
+
+:root {
+  --black: black;
+  --grey: grey;
+  --lightgray: lightgray;
+  --white: white;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-.wrapper {
+  font-family: 'Barlow Condensed', sans-serif;
 }
 
 .header {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 3em;
 }
 
 .header__nav {
-}
-
-.nav__list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .nav__list-logo {
+  padding: 0 1.25em;
+}
+
+.nav__list-logo--item {
+}
+
+.nav__list-logo--item:hover {
+  opacity: 0.5;
+}
+
+.logo__img {
+}
+
+.header__line {
+  width: 100%;
+  margin-right: -2em;
+  border: 0.1em solid var(--white);
+  z-index: 100;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5em;
+  padding: 0 10em 0 4em;
+  backdrop-filter: blur(5em);
 }
 
 .nav__list-item {
+  list-style-type: none;
+  padding: 2em 0;
+  color: var(--white);
+  font-size: 1.05em;
+  text-decoration: none;
+  letter-spacing: 0.001em;
+}
+
+.nav__list-item:hover {
+  opacity: 0.5;
+}
+
+.checked {
+  border-bottom: 0.25em solid var(--white);
+}
+
+.nav__list-item--span {
+  margin-right: 0.33em;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.header__menu {
+  display: none;
+}
+
+.crew,
+.destination,
+.technology,
+.main {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.crew {
+  background-image: url('./assets/crew/background-crew-desktop.jpg');
+}
+
+.destination {
+  background-image: url('./assets/destination/background-destination-desktop.jpg');
+}
+
+.main {
+  background-image: url('./assets/home/background-home-desktop.jpg');
+}
+
+.technology {
+  background-image: url('./assets/technology/background-technology-desktop.jpg');
+}
+
+.landing {
+  padding-top: 12%;
+  color: var(--white);
+  display: flex;
+  flex-direction: row;
+}
+
+.landing__left {
+  flex: 50% 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 11% 0 8% 12%;
+}
+
+.landing__left-subtitle {
+  font-size: 2em;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.landing__left-title {
+  font-size: 11em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.landing__left-text {
+  font-size: 1.35em;
+  line-height: 2em;
+}
+
+.landing__left-img {
+  margin: 5em 0;
+  width: 30em;
+  height: 30em;
+}
+
+.landing__left-span {
+  color: var(--grey);
+  font-weight: bold;
+}
+
+.landing__right {
+  flex: 50% 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10% 0 8% 10%;
+}
+
+.landing__right-btn {
+  padding: 4.5em 3.5em;
+  color: var(--black);
+  font-size: 1.7em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 0.1em solid transparent;
+  border-radius: 20em;
+  background-color: var(--white);
+  transition: 0.75s;
+}
+
+.landing__right-btn:hover {
+  opacity: 0.85;
+}
+
+.landing__right-title {
+  font-size: 5em;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.landing__right-text {
+  padding: 0 3em 0 0;
+  font-size: 1.5em;
+}
+
+.destination__block {
+  align-items: start;
+}
+
+.destination__nav {
+  margin-bottom: 2em;
+}
+
+.destination__list {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.destination__list-item {
+  margin-bottom: 0.1em;
+  list-style-type: none;
+  opacity: 1;
+  transition: opacity 0.25s linear 0.1s;
+  cursor: pointer;
+}
+
+.destination__list-item:hover {
+  opacity: 0.5;
+  text-decoration: underline;
+  text-underline-offset: 0.5em;
+}
+
+.destination__list-item--active {
+  text-decoration: underline;
+  text-underline-offset: 0.5em;
+}
+
+.destination_footer {
+  margin-top: 3em;
+  display: flex;
+  flex-direction: row;
+  gap: 5em;
+  padding: 3em 0;
+  border-top: 0.1em solid var(--grey);
+}
+
+.destination__distance {
+  display: flex;
+  flex-direction: column;
+}
+
+.distance__subtitle {
+  font-size: 1em;
+}
+
+.distance__title {
+  margin-top: 0.25em;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.destination__travel {
+  display: flex;
+  flex-direction: column;
+}
+
+.travel__subtitle {
+  font-size: 1em;
+}
+
+.travel__title {
+  margin-top: 0.25em;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.crew__subtitle {
+  margin-top: 2em;
+  color: var(--grey);
+  font-size: 1.85em;
+  font-weight: 100;
+}
+
+.crew__title {
+  margin-top: 0.33em;
+  font-size: 3.25em;
+  font-weight: 200;
+}
+
+.crew__text {
+  margin: 1em 0 7em;
+  font-size: 1.5em;
+}
+
+.crew__nav {
+  margin-bottom: 2em;
+}
+
+.crew__list {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.crew__list-item {
+  margin-bottom: 0.1em;
+  padding: 0.5em;
+  list-style-type: none;
+  opacity: 1;
+  transition: opacity 0.25s linear 0.1s;
+  background-color: var(--lightgray);
+  border-radius: 5em;
+  cursor: pointer;
+}
+
+.crew__list-item:hover {
+  opacity: 0.5;
+  text-decoration: underline;
+  text-underline-offset: 0.5em;
+}
+
+.crew__list-item--active {
+  text-decoration: underline;
+  text-underline-offset: 0.5em;
+  background-color: var(--grey);
+}
+
+.crew__block {
+  padding: 0;
+}
+
+.technology__block {
+  padding: 0;
+}
+
+.technology__row {
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+}
+
+.technology__nav {
+}
+
+.technology__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.technology__list-item {
+  list-style-type: none;
+  padding: 0.5em 0.95em;
+  color: var(--lightgray);
+  font-size: 1.5em;
+  font-weight: 400;
+  background-color: transparent;
+  border: 0.1em solid var(--lightgray);
+  border-radius: 5em;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.technology__list-item:hover {
+  opacity: 0.75;
+}
+
+.technology__list-item--active {
+  color: var(--black);
+  background-color: var(--white);
+  border: 0.1em solid transparent;
+}
+
+.technology__subtitle {
+  margin: 1em 0 2em;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: 100;
+  color: var(--lightgray);
+}
+
+.technology__title {
+  margin-bottom: 0.5em;
+  font-size: 2.75em;
+  font-weight: 100;
+}
+
+.technology__text {
+  color: var(--lightgray);
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+@media screen and (max-width: 700px) {
+  .header__line {
+    display: none;
+  }
+
+  .header__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+  }
+
+  .nav__list {
+    display: none;
+  }
+
+  .nav__list-item {
+    padding: 1em 1em;
+  }
+
+  .header__menu {
+    display: block;
+  }
+
+  .burger__menu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -3em;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2em;
+    background-color: var(--black);
+  }
+
+  .burger__menu-btn {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    padding: 1em;
+    color: var(--white);
+    font-size: 1.5em;
+    background-color: transparent;
+    border: 0.1em solid transparent;
+  }
+
+  .nav__list-burger {
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  .crew,
+  .destination,
+  .technology,
+  .main {
+    min-height: 100svh;
+    height: auto;
+  }
+
+  .landing {
+    display: flex;
+    flex-direction: column;
+    padding: 30% 2em 4em 2em;
+  }
+
+  .landing__left {
+    flex: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .landing__left-subtitle {
+    font-size: 1.65em;
+  }
+
+  .landing__left-title {
+    font-size: 8.75em;
+  }
+
+  .landing__left-text {
+    margin: 2em 0;
+    font-size: 1.25em;
+    line-height: 1.5em;
+  }
+
+  .landing__right {
+    margin-top: 5em;
+    flex: auto;
+    padding: 0;
+  }
+
+  .landing__right-text {
+    padding: 0.75em 0.5em;
+  }
+  .landing__right-img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .destination__block {
+    align-items: center;
+  }
+
+  .destination__list-item {
+    font-size: 1.25em;
+  }
+
+  .crew {
+    padding-bottom: 0;
+  }
+
+  .technology {
+    padding-bottom: 1em;
+  }
+
+  .technology__list {
+    display: flex;
+    flex-direction: row;
+  }
 }
