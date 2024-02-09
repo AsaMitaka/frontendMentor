@@ -22,7 +22,7 @@ const Crew = () => {
   }, []);
 
   const crewSelected = crewData[itemIndex];
-  const crewSelectedImg = '/src' + crewSelected.images.png.slice(1);
+  const crewSelectedImg = './src' + crewSelected.images.png.slice(1);
 
   return (
     <section className="crew landing">

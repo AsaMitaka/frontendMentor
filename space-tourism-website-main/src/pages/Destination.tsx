@@ -23,7 +23,7 @@ const Destination = () => {
   }, []);
 
   const planetSelected = planets[itemIndex];
-  const planetSelectedImg = '/src' + planetSelected.images.png.slice(1);
+  const planetSelectedImg = './src' + planetSelected.images.png.slice(1);
 
   return (
     <section className="destination landing ">

@@ -21,7 +21,7 @@ const Technology = () => {
   }, []);
 
   const technologySelected = technologyData[itemIndex];
-  const technologySelectedImg = '/src' + technologySelected.images.portrait.slice(1);
+  const technologySelectedImg = './src' + technologySelected.images.portrait.slice(1);
 
   return (
     <section className="technology landing ">
