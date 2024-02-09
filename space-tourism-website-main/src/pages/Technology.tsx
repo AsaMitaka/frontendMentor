@@ -21,7 +21,6 @@ const Technology = () => {
   }, []);
 
   const technologySelected = technologyData[itemIndex];
-  const technologySelectedImg = './src' + technologySelected.images.portrait.slice(1);
 
   return (
     <section className="technology landing ">
@@ -50,7 +49,11 @@ const Technology = () => {
         </div>
       </div>
       <div className="landing__right technology__block">
-        <img className="landing__right-img" alt="technology img" src={technologySelectedImg} />
+        <img
+          className="landing__right-img"
+          alt="technology img"
+          src={technologySelected.images.portrait}
+        />
       </div>
     </section>
   );

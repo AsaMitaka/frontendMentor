@@ -22,7 +22,6 @@ const Crew = () => {
   }, []);
 
   const crewSelected = crewData[itemIndex];
-  const crewSelectedImg = './src' + crewSelected.images.png.slice(1);
 
   return (
     <section className="crew landing">
@@ -45,7 +44,7 @@ const Crew = () => {
         </nav>
       </div>
       <div className="landing__right crew__block">
-        <img className="landing__right-img" alt="crew img" src={crewSelectedImg} />
+        <img className="landing__right-img" alt="crew img" src={crewSelected.images.png} />
       </div>
     </section>
   );

@@ -23,7 +23,6 @@ const Destination = () => {
   }, []);
 
   const planetSelected = planets[itemIndex];
-  const planetSelectedImg = './src' + planetSelected.images.png.slice(1);
 
   return (
     <section className="destination landing ">
@@ -31,7 +30,7 @@ const Destination = () => {
         <h1 className="landing__left-subtitle">
           <span className="landing__left-span">01</span> PICK YOUR DESTINATION
         </h1>
-        <img src={planetSelectedImg} alt="planet img" className="landing__left-img" />
+        <img src={planetSelected.images.png} alt="planet img" className="landing__left-img" />
       </div>
       <div className="landing__right destination__block">
         <nav className="destination__nav">
