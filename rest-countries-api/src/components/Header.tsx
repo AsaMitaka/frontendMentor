@@ -3,19 +3,22 @@ import { NavLink } from 'react-router-dom';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
 
 import { Btn } from '.';
-import { useTheme } from '../context/ThemeContext';
 import { PAGES } from '../const';
+import { useTheme } from '../context/ThemeContext';
 
 const Header = () => {
   const { theme, changeTheme } = useTheme();
 
   useEffect(() => {
-    if (theme === 'dark') {
-      document.querySelector('#root').classList.remove('light');
-      document.querySelector('#root').classList.add('dark');
-    } else {
-      document.querySelector('#root').classList.remove('dark');
-      document.querySelector('#root').classList.add('light');
+    const rootElement = document.querySelector('#root');
+    if (rootElement) {
+      if (theme === 'dark') {
+        rootElement.classList.remove('light');
+        rootElement.classList.add('dark');
+      } else {
+        rootElement.classList.remove('dark');
+        rootElement.classList.add('light');
+      }
     }
   }, [theme]);
 
