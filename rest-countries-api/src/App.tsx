@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { FaLongArrowAltUp } from 'react-icons/fa';
 import './App.css';
@@ -6,14 +7,11 @@ import { Detail, Error, Main } from './pages';
 import { Btn, Footer, Header } from './components';
 import { PAGES } from './const';
 import { useTheme } from './context/ThemeContext';
-import { useEffect, useState } from 'react';
 
 const App = () => {
   const { theme } = useTheme();
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
 
-  const [showScrollToTop, setShowScrollToTop] = useState(false); // Состояние для отображения кнопки "Наверх"
-
-  // Функция обработки прокрутки страницы
   const handleScroll = () => {
     if (window.pageYOffset > 300) {
       setShowScrollToTop(true);
@@ -22,13 +20,11 @@ const App = () => {
     }
   };
 
-  // Эффект для добавления прослушивателя событий при монтировании и удалении компонента
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []); // Пустой массив зависимостей означает, что эффект будет запускаться только при монтировании и размонтировании компонента
+  }, []);
 
-  // Функция для прокрутки страницы вверх
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
