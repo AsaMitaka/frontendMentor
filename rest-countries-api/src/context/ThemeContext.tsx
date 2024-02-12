@@ -1,16 +1,23 @@
 import { createContext, useContext, useReducer } from 'react';
 
-const ThemeContext = createContext(undefined);
-
 interface InitialStateProps {
   theme: 'light' | 'dark';
 }
+
+interface ThemeContextType {
+  theme: 'light' | 'dark';
+  changeTheme: () => void;
+}
+
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 const initialState: InitialStateProps = {
   theme: 'light',
 };
 
-const reducer = (state, action) => {
+type Action = { type: 'theme/light' } | { type: 'theme/dark' };
+
+const reducer = (state: InitialStateProps, action: Action): InitialStateProps => {
   switch (action.type) {
     case 'theme/light':
       return { ...state, theme: 'light' };
@@ -21,7 +28,7 @@ const reducer = (state, action) => {
   }
 };
 
-const ThemeProvider = ({ children }) => {
+const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [{ theme }, dispatch] = useReducer(reducer, initialState);
 
   const changeTheme = () => {
@@ -33,7 +40,7 @@ const ThemeProvider = ({ children }) => {
 
 const useTheme = () => {
   const context = useContext(ThemeContext);
-  if (context === undefined) throw new Error('ThemeContext used outside of context');
+  if (!context) throw new Error('useTheme must be used within a ThemeProvider');
   return context;
 };
 
